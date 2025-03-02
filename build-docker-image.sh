@@ -16,16 +16,16 @@ sudo systemctl enable docker
 sudo docker build -t techmax .
 
 # login to your docker hub account
-cat ~/my_password.txt | sudo docker login --username milly1314 --password-stdin
+cat ~/my_password.txt | sudo docker login --username <your-repo-name> --password-stdin
 
 # use the docker tag command to give the image a new name
-sudo docker tag techmax milly1314/techmax-terraform
+sudo docker tag techmax <your-repo-name>/techmax-terraform
 
 # push the image to your docker hub repository
-sudo docker push milly1314/techmax-terraform
+sudo docker push <your-repo-name>/techmax-terraform
 
 # start the container to test the image 
-sudo docker run -dp 80:80 milly1314/techmax-terraform
+sudo docker run -dp 80:80 <your-repo-name>/techmax-terraform
 
 # referances
 # https://docs.aws.amazon.com/AmazonECS/latest/developerguide/create-container-image.html
